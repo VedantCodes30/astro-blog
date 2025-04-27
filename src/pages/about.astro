@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "About Me";
+const identity = {
+  firstName: "Vedant Codes",
+  country: "India",
+  occupation: "Frontend Developer",
+  hobbies: ["Coding", "Producing Music", "Learning"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Svelete"];
+const happy = true;
+const finished = true;
+const goal = 3;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>...And my new Astro Site!</h2>
+  <p>Here are few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>
+      I Live in {identity.country} and i work as a {identity.occupation}
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My Skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+
+  {happy && <p>I am happy to be learning Astro!</p>}
+  {finished && <p>I finished this tutorial</p>}
+  {
+    goal === 3 ? (
+      <p>My Goal is to finish in 3 days.</p>
+    ) : (
+      <p>My Goal is not 3 days</p>
+    )
+  }
+</BaseLayout>

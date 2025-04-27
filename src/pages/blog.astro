@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+const pageTitle = "Blog";
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>My Astro Learning {pageTitle}</h1>
+  <p>This is where i will post about working with Astro.</p>
+
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BlogPost title={post.frontmatter.title} url={post.url} />
+      ))
+    }
+  </ul>
+</BaseLayout>
