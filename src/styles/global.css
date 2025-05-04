@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /* View Transitions */
 ::view-transition-old(root):not(.no-transition),
 ::view-transition-new(root):not(.no-transition) {
@@ -21,14 +22,13 @@ html {
   font-family: sans-serif;
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
-  display: grid;
-  place-items: center;
+  font-family: Roboto, sans-serif;
   height: 100dvh;
-  margin: 0 auto;
   width: 100%;
-  padding: 1rem;
   line-height: 1.5;
   position: relative; /* Ensure no overflow during animations */
   overflow: hidden; /* Prevent any overflow */
