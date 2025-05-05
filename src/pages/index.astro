@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+const pageTitle = "Home";
 const heroContent = {
   heading: "Welcome to My Blog",
   subHeading: "Crafting high-quality web experiences.",
@@ -8,12 +8,12 @@ const heroContent = {
     "I'm a passionate developer specializing in building fast, beautiful, and accessible websites. Let's collaborate and create something awesome!",
   ctas: [
     {
-      text: "Get Started",
+      text: "About me",
       link: "/about",
       style: "primary",
     },
     {
-      text: "View Projects",
+      text: "My Blog",
       link: "/blog/",
       style: "secondary",
     },
@@ -25,9 +25,8 @@ const heroContent = {
 };
 ---
 
-<title>Home</title>
-<BaseLayout>
-  <section class="hero">
+<BaseLayout pageTitle={pageTitle}>
+  <section class="home">
     <h1>{heroContent.heading}</h1>
     <h2>{heroContent.subHeading}</h2>
     <p>{heroContent.description}</p>
@@ -42,56 +41,4 @@ const heroContent = {
       }
     </div>
   </section>
-  <script is:inline>
-    const styles = "background: hotpink; color: white; font-size: 2rem";
-    console.log("%c This is why astro is Best", styles);
-  </script>
 </BaseLayout>
-
-<style>
-  .hero {
-    margin-top: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content:;
-    flex-direction: column;
-  }
-  .image {
-    overflow-y: hidden;
-    padding: 1rem;
-    display: flex;
-    max-width: fit-content;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    flex-direction: row;
-  }
-  img {
-    object-fit: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-    transition: 250ms ease-in-out;
-    &:hover {
-      scale: 1.2;
-      filter: drop-shadow(2px 4px 6px black);
-    }
-  }
-  button {
-    border-radius: 15px;
-    border: none;
-    margin: 1rem;
-    padding: 1em;
-    cursor: pointer;
-  }
-
-  .primary button {
-    background-color: #2563eb;
-    color: white;
-  }
-
-  .secondary button {
-    background-color: transparent;
-    color: #2563eb;
-    border: 1px solid #2563eb;
-  }
-</style>

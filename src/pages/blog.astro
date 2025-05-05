@@ -8,14 +8,15 @@ const allPosts = Object.values(
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>My Astro Learning {pageTitle}</h1>
-  <p>This is where i will post about working with Astro.</p>
-
-  <ul>
-    {
-      allPosts.map((post: any) => (
-        <BlogPost title={post.frontmatter.title} url={post.url} />
-      ))
-    }
-  </ul>
+  <div class="blog">
+    <h1>My Astro Learning {pageTitle}</h1>
+    <p>This is where i will post about working with Astro.</p>
+    <ul>
+      {
+        allPosts.map((post: any) => (
+          <BlogPost title={post.frontmatter.title} url={post.url} />
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>
