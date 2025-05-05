@@ -4,4 +4,4 @@ This follows Astro's Offical documentation project avaialble on astro.build with
 
 # Live Preview
 
-<https://vedantcodes.vercel.app/>
+<https://vedantcodes.netlify.app/>
